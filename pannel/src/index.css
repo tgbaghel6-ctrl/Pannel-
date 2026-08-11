@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --color-nexus-50: #f0f9ff;
+  --color-nexus-100: #e0f2fe;
+  --color-nexus-200: #bae6fd;
+  --color-nexus-300: #7dd3fc;
+  --color-nexus-400: #38bdf8;
+  --color-nexus-500: #0ea5e9;
+  --color-nexus-600: #0284c7;
+  --color-nexus-700: #0369a1;
+  --color-nexus-800: #075985;
+  --color-nexus-900: #0c4a6e;
+  --color-nexus-950: #082f49;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #020617;
+  color: #e2e8f0;
+}
+
+/* soft scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* focus ring */
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* skeleton pulse */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+/* toast slide */
+@keyframes toast-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.toast-enter {
+  animation: toast-in 0.25s ease-out;
+}
